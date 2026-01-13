@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div draggable="true"
+       ondragstart="inicioDrag(this)"
+       ondragend="finDrag(this)"
+       style="width:120px;height:60px;background:#4caf50;color:white;text-align:center;line-height:60px;cursor:grab;">
+    Arrástrame
+  </div>
+
+  <script>
+    function inicioDrag(elemento) {
+      console.log('El usuario ha empezado a arrastrar el elemento');
+      elemento.style.background = '#ff9800';
+    }
+
+    function finDrag(elemento) {
+      console.log('El usuario ha soltado el elemento');
+      elemento.style.background = '#4caf50';
+    }
+  </script>
+</body>
+</html>
