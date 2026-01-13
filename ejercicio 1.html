@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diálogo modal</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    dialog {
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    #cerrar {
+      background: #dc3545;
+      margin-top: 15px;
+    }
+
+    #cerrar:hover {
+      background: #a71d2a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="abrir">Abrir diálogo</button>
+
+  <dialog id="miDialogo">
+    <p>Esto es una ventana de diálogo.</p>
+    <button id="cerrar">Cerrar</button>
+  </dialog>
+
+  <script>
+    const dialogo = document.getElementById('miDialogo');
+
+    document.getElementById('abrir').onclick = () => {
+      dialogo.showModal();
+    };
+
+    document.getElementById('cerrar').onclick = () => {
+      dialogo.close();
+    };
+  </script>
+
+</body>
+</html>
